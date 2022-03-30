@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.DescriptionFragment">
+    tools:context=".ui.view.DescriptionFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="title"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="title" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image"
@@ -28,7 +28,6 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="released: 01.23.4567"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -36,62 +35,62 @@
         android:id="@+id/duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HHh:MMm"
+        android:text="@string/hhh_mmm"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/genre"
-        android:text="adventure"
+        android:hint="@string/genre"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/duration" />
 
-    <ProgressBar
-        android:id="@+id/ratingProgress"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ratingCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="#80000000"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@+id/genre" />
+        app:cardCornerRadius="30dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/genre">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/ratingProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#80000000"
+            android:max="10" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ratingText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/ratingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="15"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/ratingProgress"
-        app:layout_constraintEnd_toEndOf="@id/ratingProgress"
-        app:layout_constraintStart_toStartOf="@id/ratingProgress"
-        app:layout_constraintTop_toTopOf="@id/ratingProgress" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Score"
         android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ratingProgress"
-        app:layout_constraintStart_toEndOf="@+id/ratingProgress"
+        android:text="@string/user_score"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingCard"
+        app:layout_constraintStart_toEndOf="@+id/ratingCard"
         app:layout_constraintTop_toBottomOf="@+id/genre" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/overview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="overview"
+        android:hint="@string/hint_overview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingProgress" />
-
-
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/ratingCard" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

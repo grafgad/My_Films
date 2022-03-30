@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">My Films</string>
+    <string name="loading_error">Не удалось загрузить данные</string>
+    <string name="retry">Повторить</string>
+    <string name="data_failed_to_load">data_failed_to_load</string>
+    <string name="movie_not_found">movie_not_found</string>
+    <string name="try_again">try_again</string>
+    <string name="user_score">User Score</string>
+    <string name="hint_overview">overview</string>
+    <string name="genre">genre</string>
+    <string name="hhh_mmm">HHh:MMm</string>
+    <string name="title">title</string>
+    <string name="hint_date">01/23/4567</string>
 </resources>
